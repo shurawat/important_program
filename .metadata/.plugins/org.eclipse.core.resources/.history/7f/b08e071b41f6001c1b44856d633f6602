@@ -1,0 +1,78 @@
+package backtracking;
+
+public class HamiltonianCycle {
+	
+	int[][] adjacencyMatrix;
+	int numberOfVertices;
+	int[] hamiltonian;
+	
+	public static void main(String[] args) {
+		int[][] adjacencyMatrix = {
+				{0,1,0,0,0,1},
+				{1,0,1,0,0,0},
+				{0,1,0,0,1,0},
+				{0,0,0,0,1,1},
+				{0,0,1,1,0,1},
+				{1,0,0,1,1,0}};
+				
+		HamiltonianCycle problem = new HamiltonianCycle(adjacencyMatrix);
+	}
+	
+	public HamiltonianCycle(int[][] adjacencyMatrix) {
+		this.adjacencyMatrix = adjacencyMatrix;
+		numberOfVertices = adjacencyMatrix[0].length;
+		hamiltonian = new int[numberOfVertices];
+	}
+	
+	public void solve() {
+		hamiltonian[0] = 0;
+		if(findCycle(1)) {
+			printSolution();
+		} else {
+			System.out.println("No Hamiltonian Cycle found");
+		}
+	}
+	
+	public boolean findCycle(int position) {
+		if(position == numberOfVertices) {
+			if(adjacencyMatrix[position-1][hamiltonian[0]] == 1) {
+				return true;
+			} 
+			return false;
+		}
+		
+		for(int i=1;i<numberOfVertices;i++) {
+			if(isValid(i, position)) {
+				hamiltonian[position] = i;
+				if(findCycle(position+1)) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
+	public boolean isValid(int vertice, int position) {
+		if(adjacencyMatrix[hamiltonian[position-1]][vertice] == 0 ) {
+			return false; 
+		}
+		for(int i=0;i<position;i++) {
+			if(hamiltonian[i] == vertice) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private void printSolution() {
+		System.out.println("Hamiltonian cycle exists : ");
+		for(int i=0;i<hamiltonian.length;i++) {
+			System.out.print(hamiltonian[i] + " - ");
+		}
+		System.out.print(hamiltonian[0]);
+	}
+	
+	
+
+}

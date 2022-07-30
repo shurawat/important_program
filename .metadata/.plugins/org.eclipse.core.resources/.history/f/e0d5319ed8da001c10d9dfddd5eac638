@@ -1,0 +1,12 @@
+
+public interface Test1 {
+	
+	public interface T1{
+		
+	}
+	
+	protected interface T2{
+		
+	}
+
+}

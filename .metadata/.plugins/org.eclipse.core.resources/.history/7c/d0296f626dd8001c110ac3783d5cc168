@@ -1,0 +1,20 @@
+package prepare.map;
+
+public class StringTest {
+	
+	public static void main(String[] args) {
+		
+		String s = "test";
+		String s1 = "test";
+		String s2 = new String("test");
+		String s3 = new String(s);
+		String s3 = new String(s);
+		
+		System.out.println(s.hashCode());
+		System.out.println(s1.hashCode());
+		System.out.println(s2.hashCode());
+		System.out.println(s3.hashCode());
+		
+	}
+
+}

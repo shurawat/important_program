@@ -1,0 +1,18 @@
+class Test {
+ 
+    // Declaring and initializing variables
+    int x = 2;
+    int y = y + 2;
+ 
+    // main driver method
+    public static void main(String[] args)
+    {
+ 
+        // Creating an object of class inside main() method
+        Test m = new Test();
+ 
+        // Printing the value of x and y
+        // using above object created
+        System.out.println("x = " + m.x + ", y = " + m.y);
+    }
+}

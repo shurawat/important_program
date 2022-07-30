@@ -1,0 +1,18 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class TestService {
+	
+	
+	
+	@Autowired
+	public Test2Component component;
+	
+	public TestService() {
+		System.out.println("TestService created..");
+	}
+
+}

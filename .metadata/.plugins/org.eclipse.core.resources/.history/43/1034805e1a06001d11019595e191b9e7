@@ -1,0 +1,9 @@
+package com.example.demo.adapter;
+
+import org.springframework.cloud.function.adapter.aws.SpringBootStreamHandler;
+
+public class ApplicationAdapter extends SpringBootStreamHandler{
+	
+	
+
+}

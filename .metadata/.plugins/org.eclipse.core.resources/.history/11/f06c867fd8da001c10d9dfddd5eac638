@@ -1,0 +1,22 @@
+public class Test
+{
+    private static int value = 20;
+    public int s = 15;
+    Integer i = 10;
+    Integer j = 10;
+    public static int temp = 10;  
+    public  class Nested
+    {  
+      private void display()
+      {
+    	  i.equals(j)
+          System.out.println(temp + s + value);
+      }  
+    }  
+       
+    public static void main(String args[])
+    {  
+      Test.Nested inner = new Test().new Nested();  
+      inner.display();  
+    } 
+}

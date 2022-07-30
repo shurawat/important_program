@@ -1,0 +1,19 @@
+class Clidder 
+{
+    private void flipper() 
+    {
+        System.out.println("Clidder");
+    }
+}
+  
+public class Test extends Clidder 
+{
+    public final void flipper() 
+    {
+        System.out.println("Clidlet");
+    }
+    public static void main(String[] args) 
+    {
+        new Test().flipper();
+    }
+}

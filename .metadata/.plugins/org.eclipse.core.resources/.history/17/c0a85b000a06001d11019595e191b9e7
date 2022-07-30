@@ -1,0 +1,27 @@
+package prepare.mulitthread;
+
+import java.util.concurrent.BlockingQueue;
+
+public class Publisher implements Runnable {
+	
+	BlockingQueue<Integer> queue;
+	Object lock;
+	int i = 0;
+	
+	public Publisher(BlockingQueue<Integer> queue, Object lock) {
+		this.queue = queue;
+		this.lock = lock;
+	}
+
+	@Override
+	public void run() {
+		while(true) {
+			while(queue.remainingCapacity() > 0) {
+				i++;
+				queue.add(i);
+				System.out.println("");
+			}
+		}
+	}
+
+}

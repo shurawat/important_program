@@ -1,0 +1,62 @@
+package backtracking_practice;
+
+public class ColoringPractice {
+	
+	int numberOfVertices;
+	int[][] graph;
+	int[] colors;
+	int numberOfColors;
+	
+	public ColoringPractice(int[][] graph, int colors) {
+		numberOfColors = colors;
+		this.graph = graph;
+		this.colors = new int[colors];
+		this.numberOfVertices = graph[0].length;
+	}
+	
+	public static void main(String[] args) {
+		int[][] adjacencyMatrix = {
+				{0,1,1,1,0,0},
+				{1,0,1,0,1,1},
+				{1,1,0,1,0,1},
+				{1,0,1,0,0,1},
+				{0,1,0,0,0,1},
+				{0,1,1,1,1,0}};
+		ColoringPractice coloringPractice = new ColoringPractice(graph, 4);
+		
+	}
+	
+	public void solve() {
+		
+		if(solveColoring(0)) {
+			System.out.println("Found Solution");
+		}else {
+			System.out.println("No Solution");
+		}
+	}
+	
+	public boolean solveColoring(int position) {
+		if(position == numberOfVertices) {
+			return true;
+		}
+		for(int i=0;i<numberOfColors;i++) {
+			if(isValidColor(i, position)) {
+				colors[position] = i;
+				if(solveColoring(position+1)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public boolean isValidColor(int color, int position) {
+		for(int i=0;i<numberOfVertices; i++) {
+			if(graph[position][i] == 1 && colors[position] == color) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+}

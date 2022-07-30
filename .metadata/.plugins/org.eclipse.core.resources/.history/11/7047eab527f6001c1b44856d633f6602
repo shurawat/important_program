@@ -1,0 +1,15 @@
+package backtracking;
+
+public class NQueensProblem {
+	
+	int[][] chessBoard;
+	int numberOfQueens;
+	
+	public NQueensProblem(int numberOfQueens) {
+		this.numberOfQueens = numberOfQueens;
+		this.chessBoard = new int[numberOfQueens][numberOfQueens];
+	}
+	
+	
+
+}

@@ -1,0 +1,55 @@
+package backtracking;
+
+public class Maze {
+	
+	int[][] maze;
+	int[][] solution;
+	int mazeSize;
+	
+	public Maze(int[][] maze) {
+		this.maze = maze;
+		mazeSize = maze[0].length;
+		solution = new int[mazeSize][mazeSize];
+	}
+	
+	public void solve() {
+		if(solveProblem(0, 1)) {
+			printSolution();
+		} else {
+			System.out.println("Not able to solve");
+		}
+	}
+	
+	private boolean solveProblem(int rowIndex, int columnIndex) {
+		if(rowIndex == mazeSize-1 && columnIndex == mazeSize-1) {
+			solution[rowIndex][columnIndex] = 1;
+			return true;
+		}
+		
+		if(isValid(rowIndex, columnIndex)) {
+			if(solveProblem(rowIndex, columnIndex+1)) {
+				return true;
+			}
+			if(solveProblem(rowIndex+1, columnIndex)) {
+				
+			}
+		}
+		
+		return false;
+	}
+	
+	private boolean isValid(int rowIndex, int columnIndex) {
+		return true;
+	}
+	
+	private void printSolution() {
+		for(int i=0;i<mazeSize;i++) {
+			for(int j=0;j<mazeSize;j++) {
+				if()
+				System.out.print(solution[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+}

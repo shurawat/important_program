@@ -1,0 +1,17 @@
+package backtracking;
+
+public class HamiltonianCycle {
+	
+	int[][] adjacencyMatrix;
+	int numberOfVertices;
+	int[] hamiltonian;
+	
+	public HamiltonianCycle(int[][] adjacencyMatrix) {
+		this.adjacencyMatrix = adjacencyMatrix;
+		numberOfVertices = adjacencyMatrix[0].length;
+		hamiltonian = new int[numberOfVertices];
+	}
+	
+	
+
+}

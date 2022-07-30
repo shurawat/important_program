@@ -1,0 +1,29 @@
+package backtracking;
+
+public class Coloring {
+	
+	int numberOfColors;
+	int[] colors;
+	int[][] graph;
+	int numberOfVertices;
+	
+	public Coloring(int[][] graph, int numberOfColors) {
+		this.numberOfColors = numberOfColors;
+		this.graph = graph;
+		colors = new int[graph[0].length];
+		numberOfVertices = graph[0].length;
+	}
+	
+	public void solve() {
+		if(findSolution(0)) {
+			
+		} else {
+			System.out.println("No solution found !!");
+		}
+	}
+	
+	private boolean findSolution(int vertice) {
+		return false;
+	}
+
+}

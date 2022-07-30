@@ -1,0 +1,10 @@
+package prepare.lambda;
+
+public class Test {
+	
+	
+	List<Person> person = Person.generateDefaultList();
+	person.
+	
+
+}

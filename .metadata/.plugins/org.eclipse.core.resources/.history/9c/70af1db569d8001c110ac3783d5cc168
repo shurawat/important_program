@@ -1,0 +1,13 @@
+package prepare.map;
+
+public class CustomMap<K,V> {
+	
+	private int capacity = 16;
+	
+	private Entry[] table;
+	
+	public CustomMap<K, V>(){
+		this.table = new Entry[capacity];
+	}
+
+}

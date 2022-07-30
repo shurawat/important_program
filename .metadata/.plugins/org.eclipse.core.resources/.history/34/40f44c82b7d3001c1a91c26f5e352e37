@@ -1,0 +1,19 @@
+package prepare.lambda;
+
+import java.util.List;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		List<Person> personList = Person.generateDefaultList();		
+		Test.printPersonOlderThan(personList, 0);
+	}
+	
+	public static void printPersonOlderThan(List<Person> personList, int age) {
+		
+		personList.stream().filter(p->p.getAge() > age).forEach(p -> p.printPerson());
+		
+	}
+
+
+}

@@ -1,0 +1,20 @@
+package prepare.mulitthread;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+public class Publisher implements Runnable {
+	
+	BlockingQueue<Integer> queue;
+	
+	public Publisher(BlockingQueue<Integer> queue) {
+		
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

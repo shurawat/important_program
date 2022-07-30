@@ -1,0 +1,19 @@
+package com.example.demo;
+
+import java.util.function.Supplier;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LambdaSpringApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LambdaSpringApplication.class, args);
+	}
+	
+	public Supplier<String> getName(){
+		return "My name is shubham";
+	}
+
+}

@@ -1,0 +1,32 @@
+package prepare.map;
+
+public class CustomMap<K,V> {
+	
+	private int capacity = 16;
+	
+	private Entry<K,V>[] table;
+	
+	public CustomMap(){
+		this.table = new Entry[capacity];
+	}
+	
+	public CustomMap(int capacity){
+		this.capacity = capacity;
+		this.table = new Entry[capacity];
+	}
+	
+	
+	public void put(K key, V value) {
+		int index = index(key);
+		Entry<K, V> entry = new Entry<K, V>(value, key, next)
+	}
+	
+	
+	private int index(K key){
+        if(key == null){
+            return 0;
+        }
+        return Math.abs(key.hashCode() % capacity);
+    }
+
+}

@@ -1,0 +1,38 @@
+package prepare.mulitthread;
+
+import java.util.Queue;
+
+public class Subscriber implements Runnable {
+
+	Queue<Integer> queue;
+	int MAX_CAPACITY;
+	Object lock;
+
+	public Subscriber(Queue<Integer> queue, Object lock, int capacity) {
+		this.queue = queue;
+		this.lock = lock;
+		MAX_CAPACITY = capacity;
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			synchronized (lock) {
+				while (queue.size() == 0) {
+					try {
+						lock.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				Integer i = queue.poll();
+				System.out.println("Consumer consumes " + i);
+				lock.notify();
+			}
+
+		}
+
+	}
+
+}

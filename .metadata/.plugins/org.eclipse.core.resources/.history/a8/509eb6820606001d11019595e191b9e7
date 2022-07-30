@@ -1,0 +1,12 @@
+package prepare.mulitthread;
+
+public class PrintSequenceCaller {
+	
+	public static void main(String[] args) {
+		
+		Thread t1 = new Thread(new PrintSequence(1));
+		
+		
+	}
+
+}

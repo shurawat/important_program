@@ -1,0 +1,25 @@
+interface Anonymous
+{
+    public int getValue();
+}
+public class Test 
+{
+    private int data = 15;
+    public static void main(String[] args)
+    {
+        Anonymous inner = new Anonymous()
+                {
+                    int data = 5;
+                    public int getValue()
+                    {
+                        return data;
+                    }
+                    private int getData()
+                    {
+                        return data;
+                    }
+                };
+                Test outer = new Test();
+        System.out.println(inner.getValue() + outer.data);
+    }
+}

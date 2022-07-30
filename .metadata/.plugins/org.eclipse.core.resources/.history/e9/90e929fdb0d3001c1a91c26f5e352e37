@@ -1,0 +1,12 @@
+package prepare.lambda;
+
+import java.util.List;
+
+public class Test {
+	
+	
+	List<Person> person = Person.generateDefaultList();
+	person.
+	
+
+}

@@ -1,0 +1,27 @@
+package prepare.linklist;
+
+import java.util.ArrayDeque;
+import java.util.HashSet;
+import java.util.Queue;
+import java.util.Set;
+
+public class LRUCache {
+	
+
+	int MAX = 3;
+	Queue<Integer> queue = new ArrayDeque<>();
+	Set<Integer> set = new HashSet<>();
+	
+	
+	public static void main(String[] args) {
+		
+		
+	}
+	
+	public void refer(int page) {
+		
+		
+		
+	}
+
+}

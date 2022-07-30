@@ -1,0 +1,43 @@
+package prepare.linklist;
+
+import java.lang.ref.Reference;
+import java.util.ArrayDeque;
+import java.util.HashSet;
+import java.util.Queue;
+import java.util.Set;
+
+public class LRUCache {
+	
+
+	int MAX = 3;
+	Queue<Integer> queue = new ArrayDeque<>();
+	Set<Integer> set = new HashSet<>();
+	
+	
+	public static void main(String[] args) {
+		
+		refer(1);
+		refer(2);
+		refer(3);
+		refer(2);
+		refer(4);
+		refer(6);
+		
+		
+	}
+	
+	public static void refer(int page) {
+		
+		
+		if(!set.contains(page)) {
+			if(queue.size() == MAX) {
+				int p = queue.poll();
+				set.add(p);
+			}
+		}
+		set.add(page);
+		queue.add(page);
+		
+	}
+
+}

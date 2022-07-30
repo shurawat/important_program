@@ -1,0 +1,100 @@
+package backtracking;
+
+public class Sudoku {
+	
+	int boardSize = 9;
+	int minNumber = 1;
+	int maxNumber = 9;
+	int boxSize = 3;
+	int[][] sudokuTable;
+	
+	public Sudoku(int[][] sudokuTable) {
+		this.sudokuTable = sudokuTable;
+	}
+	
+	public static void main(String[] args) {
+		int[][] sudokuTable = {{3,0,6,5,0,8,4,0,0},
+							   {5,2,0,0,0,0,0,0,0},
+							   {0,8,7,0,0,0,0,3,1},
+							   {0,0,3,0,1,0,0,8,0},
+							   {9,0,0,8,6,3,0,0,5},
+							   {0,5,0,0,9,0,6,0,0},
+							   {1,3,0,0,0,0,2,5,0},
+							   {0,0,0,0,0,0,0,7,4},
+							   {0,0,5,2,0,6,3,0,0}};
+		Sudoku sudoku = new Sudoku(sudokuTable);
+		sudoku.solve();
+		
+	}
+	
+	public void solve() {
+		if(solveProblem(0, 0)) {
+			print();
+		} else {
+			System.out.println("no solution");
+		}
+		
+	}
+	private boolean solveProblem(int rowIndex, int columnIndex) {
+		
+		if(rowIndex == boardSize) {
+			columnIndex++;
+			if(columnIndex == boardSize) {
+				return true;
+			} else {
+				rowIndex = 0;
+			}
+		}
+		
+		if(sudokuTable[rowIndex][columnIndex] != 0) {
+			return solveProblem(rowIndex+1, columnIndex);
+		}
+		
+		for(int num=minNumber;num<maxNumber;num++) {
+			if(isValid(rowIndex, columnIndex, num)) {
+				sudokuTable[rowIndex][columnIndex] = num;
+				if(solveProblem(rowIndex+1, columnIndex)) {
+					return true;
+				}
+				sudokuTable[rowIndex][columnIndex] = 0;
+			}
+		}
+		return false;
+	}
+	private boolean isValid(int rowIndex, int columnIndex, int num) {
+		for(int i=0;i<boardSize;i++) {
+			if(sudokuTable[i][columnIndex] == num) {
+				return false;
+			}
+			if(sudokuTable[rowIndex][i] == num) {
+				return false;
+			}
+		}
+		
+		int rowOffset = (rowIndex/3) * boxSize;
+		int columnOffSet = (columnIndex/3) * boxSize;
+		
+		for(int i=0;i<boxSize;i++) {
+			for(int j=0;j<boxSize;j++) {
+				if(sudokuTable[rowOffset+i][columnOffSet+j] == num) {
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	}
+	
+	private void print() {
+		for(int i=0;i<boardSize;i++) {
+			if(i%3==0) System.out.println();
+			for(int j=0;j<boardSize;j++) {
+				if(j%3==0) System.out.print(" ");
+				System.out.print(sudokuTable[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+
+}

@@ -1,0 +1,82 @@
+package backtracking_practice;
+
+public class HamiltonianCycle {
+
+	int numberOfVertices;
+	int[] hamiltonianCycle;
+	int[][] graph;
+
+	public HamiltonianCycle(int[][] graph) {
+		this.graph = graph;
+		numberOfVertices = graph[0].length;
+		hamiltonianCycle = new int[numberOfVertices];
+	}
+
+	public static void main(String[] args) {
+
+		int[][] graph = { { 0, 1, 0, 0, 0, 1 }, { 1, 0, 1, 0, 0, 0 }, { 0, 1, 0, 0, 1, 0 }, { 0, 0, 0, 0, 1, 1 },
+				{ 0, 0, 1, 1, 0, 1 }, { 1, 0, 0, 1, 1, 0 } };
+
+		HamiltonianCycle cycle = new HamiltonianCycle(graph);
+		cycle.initialLoad();
+		cycle.solve();
+
+	}
+	
+	private void initialLoad() {
+		for (int i = 0; i < numberOfVertices; i++) {
+			hamiltonianCycle[i] = Integer.MIN_VALUE;
+		}
+	}
+
+	public void solve() {
+		hamiltonianCycle[0] = 0;
+		if (isHamiltonian(1)) {
+			printSolution();
+		} else {
+			System.out.println("Not hamiltonian");
+		}
+
+	}
+
+	private void printSolution() {
+		for (int i = 0; i < numberOfVertices; i++) {
+			System.out.print(hamiltonianCycle[i] + "->");
+		}
+		System.out.print(hamiltonianCycle[0]);
+	}
+
+	public boolean isHamiltonian(int position) {
+		if(position == numberOfVertices) {
+			if(graph[position-1][hamiltonianCycle[0]] == 1) {
+				return true;
+			} 
+			return false;
+		}
+		
+		for(int i=1;i<numberOfVertices;i++) {
+			if(isValidVertice(i, position)) {
+				hamiltonianCycle[i] = i;
+				if(isHamiltonian(position+1)) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+
+	private boolean isValidVertice(int vertice, int position) {
+
+		if(graph[hamiltonianCycle[position-1]][vertice] == 0 ) {
+			return false; 
+		}
+		for(int i=0;i<position;i++) {
+			if(hamiltonianCycle[i] == vertice) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+}

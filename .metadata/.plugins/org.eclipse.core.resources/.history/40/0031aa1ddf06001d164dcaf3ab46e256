@@ -1,0 +1,7 @@
+package com.example.demo;
+
+public interface Test {
+	
+	public void t1();
+
+}

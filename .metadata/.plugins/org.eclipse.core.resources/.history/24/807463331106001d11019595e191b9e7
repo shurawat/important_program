@@ -1,0 +1,19 @@
+package array;
+
+public class Water {
+	
+	public static void main(String[] args) {
+		
+		
+		
+	}
+	
+	public static int maxWater(int[] arr) {
+		int res = 0;
+		
+		
+		
+		return res;
+	}
+
+}

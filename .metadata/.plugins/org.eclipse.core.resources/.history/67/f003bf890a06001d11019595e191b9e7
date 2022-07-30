@@ -1,0 +1,29 @@
+package prepare.mulitthread;
+
+import java.util.Queue;
+
+public class Subscriber implements Runnable{
+	
+	Queue<Integer> queue;
+	int MAX_CAPACITY;
+	Object lock;
+	
+	public Subscriber(Queue<Integer> queue, Object lock, int capacity) {
+		this.queue = queue;
+		this.lock = lock;
+		MAX_CAPACITY = capacity;
+	}
+
+	@Override
+	public void run() {
+		while(true) {
+			synchronized (lock) {
+				while(queue.size() == 0) {
+					
+				}
+			}
+		}
+		
+	}
+
+}

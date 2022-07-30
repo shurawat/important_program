@@ -1,0 +1,16 @@
+
+public class Admin {
+	public bool addParkingFloor(ParkingFloor floor) {
+		return true;
+	}
+
+	public bool addParkingSpot(String floorName, ParkingSpot spot);
+
+	public bool addParkingDisplayBoard(String floorName, ParkingDisplayBoard displayBoard);
+
+	public bool addCustomerInfoPanel(String floorName, CustomerInfoPanel infoPanel);
+
+	public bool addEntrancePanel(EntrancePanel entrancePanel);
+
+	public bool addExitPanel(ExitPanel exitPanel);
+}

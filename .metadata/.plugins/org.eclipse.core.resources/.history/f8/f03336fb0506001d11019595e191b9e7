@@ -1,0 +1,26 @@
+package prepare.mulitthread;
+
+public class PrintSequence implements Runnable{
+	
+	int remainder;
+	Object lock = new Object();
+	int MAX_NUMBER = 10;
+	
+	public PrintSequence(int remainder) {
+		this.remainder = remainder;
+	}
+
+	@Override
+	public void run() {
+		
+		while(number<MAX_NUMBER) {
+			
+			
+			
+		}
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,71 @@
+package stream;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		// febonacci
+		// duplicates
+		// sum
+		// multiply
+
+		Stream.iterate(new int[] { 0, 1 }, (n -> new int[] { n[1], n[0] + n[1] }))
+				.limit(10)
+				.map(n -> n[0])
+				.forEach(n -> System.out.println(n));
+
+		List<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(1);
+		list.add(2);
+		list.add(2);
+		list.add(3);
+		Set<Integer> set = new HashSet<>();
+		System.out.println("__________________");
+		list.stream().filter(n -> !set.add(n)).forEach(System.out::println);
+		System.out.println("________________");
+		System.out.println(list.stream().reduce((n1, n2) -> n1 + n2).get());
+		System.out.println("________________");
+		System.out.println(list.stream().reduce(1, (n1, n2) -> n1 * n2));
+		System.out.println("________________");
+		IntStream.range(1, 11).filter(n -> n % 2 == 0).forEach(System.out::println);
+		System.out.println("________________");
+		List<String> list1 = Arrays.asList("3", "6", "8", "14", "15");
+		
+		System.out.println("sum is -> " +list.stream().mapToInt(n -> n).sum());
+		
+		System.out.println("________________");
+
+// Using Stream mapToInt(ToIntFunction mapper)
+// and displaying the corresponding IntStream
+		list1.stream().mapToInt(num -> Integer.parseInt(num)).filter(num -> num % 3 == 0).forEach(System.out::println);
+		System.out.println("________________");
+		list1.stream().map(num -> Integer.parseInt(num)).filter(num -> num % 3 == 0).forEach(System.out::println);
+
+        List<String> l = Arrays.asList("B", "A", "A", "C", "B", "A");
+        System.out.println("________________");
+        System.out.println(l.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
+
+        Integer[] a = new Integer[]{1,4,3};
+        Integer[] b = new Integer[]{2,5,6};
+        
+        Object[] c = Stream.of(a, b).flatMap(Stream::of).sorted().toArray();
+        
+        System.out.println(Arrays.toString(c));
+        
+        Object[] d = Stream.concat(Stream.of(a), Stream.of(b)).toArray();
+        System.out.println(Arrays.toString(d));
+        
+	}
+
+}

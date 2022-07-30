@@ -1,0 +1,11 @@
+package prepare.mulitthread;
+
+public class PrintSequence {
+	
+	int remainder;
+	
+	public PrintSequence(int remainder) {
+		this.remainder = remainder;
+	}
+
+}

@@ -1,0 +1,14 @@
+package backtracking;
+
+public class Coloring {
+	
+	int numberOfColors;
+	int[] colors;
+	int[][] graph;
+	int numberOfVertices;
+	
+	public Coloring(int[][] graph, int numberOfColors) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

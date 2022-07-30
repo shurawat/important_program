@@ -1,0 +1,9 @@
+package prepare.file;
+
+public class SumOfArrayToTarget {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

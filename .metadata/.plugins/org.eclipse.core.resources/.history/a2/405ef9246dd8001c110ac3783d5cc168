@@ -1,0 +1,9 @@
+package prepare.map;
+
+public class StringTest {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

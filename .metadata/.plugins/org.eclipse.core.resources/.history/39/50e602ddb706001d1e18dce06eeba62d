@@ -1,0 +1,31 @@
+package string;
+
+import integer.GCDLCM;
+
+public class MinimumStringDivisible {
+	
+	public static void main(String[] args) {
+		String s = "ccc";
+		String s1 = "cc";
+		String s2 = "";
+		String s3 = "";
+		
+		int n = s.length();
+		int m = s1.length();
+		
+		int l = GCDLCM.LCM(n, m);
+		
+		for(int i=0;i<l/n;i++) {
+			s2 = s2+s;
+		}
+		for(int i=0;i<l/m;i++) {
+			s3 = s3+s1;
+		}
+		if(s2.equals(s3)) {
+			System.out.println(s3);
+		}else {
+			System.out.println(-1);
+		}
+	}
+
+}

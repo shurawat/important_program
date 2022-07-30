@@ -1,0 +1,11 @@
+package prepare.mulitthread;
+
+public class PubSubCaller {
+	
+	public static void main(String[] args) {
+		
+		
+		
+	}
+
+}

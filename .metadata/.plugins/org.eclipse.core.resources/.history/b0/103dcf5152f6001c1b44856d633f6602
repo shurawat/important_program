@@ -1,0 +1,16 @@
+package backtracking;
+
+public class Sudoku {
+	
+	int boardSize = 9;
+	int minNumber = 1;
+	int maxNumber = 9;
+	int boxSize = 3;
+	int[][] sudokuTable;
+	
+	public Sudoku(int[][] sudokuTable) {
+		this.sudokuTable = sudokuTable;
+	}
+	
+
+}

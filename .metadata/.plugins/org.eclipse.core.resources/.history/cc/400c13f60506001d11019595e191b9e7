@@ -1,0 +1,25 @@
+package prepare.mulitthread;
+
+public class PrintSequence implements Runnable{
+	
+	int remainder;
+	Object lock = new Object();
+	
+	public PrintSequence(int remainder) {
+		this.remainder = remainder;
+	}
+
+	@Override
+	public void run() {
+		
+		while(true) {
+			
+			
+			
+		}
+		
+	}
+	
+	
+
+}

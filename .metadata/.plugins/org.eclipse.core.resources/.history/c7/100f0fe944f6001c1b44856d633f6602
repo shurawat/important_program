@@ -1,0 +1,17 @@
+package backtracking;
+
+public class Coloring {
+	
+	int numberOfColors;
+	int[] colors;
+	int[][] graph;
+	int numberOfVertices;
+	
+	public Coloring(int[][] graph, int numberOfColors) {
+		this.numberOfColors = numberOfColors;
+		this.graph = graph;
+		colors = new int[graph[0].length];
+		numberOfVertices = graph[0].length;
+	}
+
+}

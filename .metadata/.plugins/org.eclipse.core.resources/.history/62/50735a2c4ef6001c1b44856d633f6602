@@ -1,0 +1,36 @@
+package backtracking;
+
+public class Maze {
+	
+	int[][] maze;
+	int[][] solution;
+	int mazeSize;
+	
+	public Maze(int[][] maze) {
+		this.maze = maze;
+		mazeSize = maze[0].length;
+		solution = new int[mazeSize][mazeSize];
+	}
+	
+	public void solve() {
+		
+	}
+	
+	private boolean solveProblem() {
+		
+	}
+	
+	private boolean isValid() {
+		
+	}
+	
+	private void printSolution() {
+		for(int i=0;i<mazeSize;i++) {
+			for(int j=0;j<mazeSize;j++) {
+				System.out.print(solution[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+}

@@ -1,0 +1,2 @@
+myapp="test"
+server.port: 8888

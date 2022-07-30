@@ -1,0 +1,10 @@
+package tree;
+
+public class ZigZag {
+	
+	public static void main(String[] args) {
+		CreateTree ctree = new CreateTree();
+		Node head = ctree.createTree();
+	}
+
+}

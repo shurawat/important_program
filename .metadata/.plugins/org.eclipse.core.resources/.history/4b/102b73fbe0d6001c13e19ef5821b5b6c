@@ -1,0 +1,25 @@
+package prepare.file;
+
+import java.util.Arrays;
+
+public class SumOfArrayToTarget {
+	
+	public static void main(String[] args) {
+		
+		int[] arr = {8, 7, 2, 5, 3, 1};
+		int target = 10;
+		
+		
+		Arrays.sort(arr);
+		
+		int low = 0;
+		int high = arr.length -1;
+		
+		while(low<high) {
+			
+		}
+		
+		
+	}
+
+}

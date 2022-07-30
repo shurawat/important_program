@@ -1,0 +1,20 @@
+public class Test {
+    // Declaring and initializing integer with custom value
+    int x = 2;
+ 
+    // Constructor of this class
+    // Parameterized constructor
+    Test(int i) { x = i; }
+ 
+    // Main driver method
+    public static void main(String[] args)
+    {
+ 
+        // Creating object of class in main()
+        Test t = new Test(5);
+ 
+        // Printing the value
+        System.out.println("x = " + t.x);
+        System.out.println("x = " + x);
+    }
+}

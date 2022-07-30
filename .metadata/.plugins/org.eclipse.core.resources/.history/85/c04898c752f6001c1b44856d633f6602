@@ -1,0 +1,47 @@
+package backtracking;
+
+public class Sudoku {
+	
+	int boardSize = 9;
+	int minNumber = 1;
+	int maxNumber = 9;
+	int boxSize = 3;
+	int[][] sudokuTable;
+	
+	public Sudoku(int[][] sudokuTable) {
+		this.sudokuTable = sudokuTable;
+	}
+	
+	public void solve() {
+		if(solveProblem(0, 0)) {
+			print();
+		} else {
+			System.out.println("no solution");
+		}
+		
+	}
+	private boolean solveProblem(int rowIndex, int columnIndex) {
+		
+		for(int num=1;num<maxNumber;num++) {
+			if(isValid(rowIndex, columnIndex, num)) {
+				sudokuTable[rowIndex][columnIndex] = num;
+				if(solveProblem(rowIndex, columnIndex));
+			}
+		}
+		return false;
+	}
+	private boolean isValid(int rowIndex, int columnIndex, int num) {
+		return true;
+	}
+	
+	private void print() {
+		for(int i=0;i<boardSize;i++) {
+			for(int j=0;j<boardSize;j++) {
+				System.out.print(sudokuTable[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+
+}

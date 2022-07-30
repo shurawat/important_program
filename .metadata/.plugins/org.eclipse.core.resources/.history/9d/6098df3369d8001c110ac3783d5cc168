@@ -1,0 +1,10 @@
+package prepare.map;
+
+public class Entry<K,V> {
+	
+	private V value;
+	private K key;
+	private Entry<K,V> next;
+	
+
+}

@@ -1,0 +1,14 @@
+package prepare.linklist;
+
+import java.util.ArrayDeque;
+
+public class LRUCache {
+	
+	public static void main(String[] args) {
+		
+		int MAX = 3;
+		Queue queue = new ArrayDeque<E>();
+		
+	}
+
+}

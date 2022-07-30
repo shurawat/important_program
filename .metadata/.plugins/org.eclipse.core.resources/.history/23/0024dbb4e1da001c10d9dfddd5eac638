@@ -1,0 +1,9 @@
+public class Test
+{
+    public static void main(String[] args)
+    {
+        double data = 444.324;
+        int value = (int) data;
+        System.out.println(value);
+    }
+}

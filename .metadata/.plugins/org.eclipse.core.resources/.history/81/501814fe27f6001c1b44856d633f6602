@@ -1,0 +1,26 @@
+package backtracking;
+
+public class NQueensProblem {
+	
+	int[][] chessBoard;
+	int numberOfQueens;
+	
+	public NQueensProblem(int numberOfQueens) {
+		this.numberOfQueens = numberOfQueens;
+		this.chessBoard = new int[numberOfQueens][numberOfQueens];
+	}
+	
+	private void printQueens() {
+		for(int row =0;row<numberOfQueens; row++) {
+			for(int col =0; col<numberOfQueens; col++) {
+				if(chessBoard[row][col] ==1) {
+					System.err.print(" * ");
+				} else {
+					System.out.print(" - ");
+				}
+				System.out.println();
+			}
+		}
+	}
+
+}

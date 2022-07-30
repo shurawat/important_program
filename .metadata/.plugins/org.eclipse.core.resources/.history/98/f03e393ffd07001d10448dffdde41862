@@ -1,0 +1,5 @@
+package prepare.oops.concepts.abstraction;
+
+public class D implements C{
+
+}

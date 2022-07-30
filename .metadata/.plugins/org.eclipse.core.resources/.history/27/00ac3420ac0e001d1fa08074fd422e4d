@@ -1,0 +1,28 @@
+package tree;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class ZigZag {
+
+	public static void main(String[] args) {
+		CreateTree ctree = new CreateTree();
+		Node head = ctree.createTree();
+		printZigZag(head);
+	}
+
+	private static void printZigZag(Node head) {
+
+		Queue<Node> queue = new LinkedList<>();
+		queue.add(head);
+
+		while (!queue.isEmpty()) {
+			
+			System.out.println(head.value);
+			
+
+		}
+
+	}
+
+}

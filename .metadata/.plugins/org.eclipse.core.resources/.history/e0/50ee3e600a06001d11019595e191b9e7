@@ -1,0 +1,17 @@
+package prepare.mulitthread;
+
+public class Subscriber implements Runnable{
+	
+	
+	
+	public Subscriber() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void run() {
+		
+		
+	}
+
+}

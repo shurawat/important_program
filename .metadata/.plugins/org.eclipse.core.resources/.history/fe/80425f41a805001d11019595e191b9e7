@@ -1,0 +1,12 @@
+package com.example.demo.service;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Test2Component {
+	
+	public Test2Component() {
+		System.out.println("Test2Component created");
+	}
+
+}

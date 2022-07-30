@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;User.java&apos; to &apos;mainapp/src/main/java/com.learn.mainapp.model&apos;&#x0D;&#x0A;- Original project: &apos;sb&apos;&#x0D;&#x0A;- Destination element: &apos;mainapp/src/main/java/com.learn.mainapp.model&apos;&#x0D;&#x0A;- Original element: &apos;com.learn.sb.entity.User.java&apos;" description="Copy compilation unit" destination="=mainapp/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.learn.mainapp.model" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.learn.sb.entity{User.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1652367197854" units="1" version="1.0"/>
+</session>
